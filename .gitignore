@@ -8,3 +8,5 @@
 !nushell/env.nu
 !zellij/
 !helix/config.toml
+!fuzzel/fuzzel.ini
+!alacritty/alacritty.toml

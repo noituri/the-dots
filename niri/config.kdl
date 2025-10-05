@@ -338,6 +338,11 @@ animations {
     // slowdown 3.0
 }
 
+layer-rule {
+    // match namespace="^swww-daemon$"
+    // place-within-backdrop true
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
@@ -388,29 +393,29 @@ window-rule {
     clip-to-geometry true
 }
 
-workspace "spotify"
+workspace "Spotify"
 
-workspace "browser" {
+workspace "Zen" {
     open-on-output "DP-1"
 }
 
-workspace "stremio" {
+workspace "Movies" {
     open-on-output "DP-1"
 }
 
-workspace "secondary-browser" {
+workspace "Chrome" {
     open-on-output "DP-1"
 }
 
-workspace "discord" {
+workspace "Discord" {
     open-on-output "DP-1"
 }
 
-workspace "code" {
+workspace "Code" {
     open-on-output "DP-2"
 }
 
-workspace "steam" {
+workspace "Steam" {
     open-on-output "DP-2"
 }
 
@@ -430,9 +435,10 @@ binds {
     // Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "alacritty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Shift+L hotkey-overlay-title="Suspend: hyprlock" { spawn "bash" "-c" "hyprlock & disown & sleep 1 && systemctl suspend &"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -489,6 +495,7 @@ binds {
     // Mod+K     { focus-window-or-workspace-up; }
     // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
     // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Mod+Shift+Ctrl+K     { move-windowSuspendor-to-workspacebashu "-cp "hyprlock & disown & sleep 1 && systemctl suspend &"; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -579,28 +586,28 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+0 { focus-workspace "browser"; }
-    Mod+1 { focus-workspace "stremio"; }
-    Mod+2 { focus-workspace "discord"; }
+    Mod+0 { focus-workspace "Zen"; }
+    Mod+1 { focus-workspace "Movies"; }
+    Mod+2 { focus-workspace "Discord"; }
     Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace "secondary-browser"; }
-    Mod+5 { focus-workspace "code"; }
+    Mod+4 { focus-workspace "Chrome"; }
+    Mod+5 { focus-workspace "Code"; }
     Mod+6 { focus-workspace 6; }
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace "steam"; }
-    Mod+S { focus-workspace "spotify"; }
-    Mod+Ctrl+0 { move-column-to-workspace "browser"; }
-    Mod+Ctrl+1 { move-column-to-workspace "stremio"; }
-    Mod+Ctrl+2 { move-column-to-workspace "discord"; }
+    Mod+9 { focus-workspace "Steam"; }
+    Mod+S { focus-workspace "Spotify"; }
+    Mod+Ctrl+0 { move-column-to-workspace "Zen"; }
+    Mod+Ctrl+1 { move-column-to-workspace "Movies"; }
+    Mod+Ctrl+2 { move-column-to-workspace "Discord"; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace "secondary-browser"; }
-    Mod+Ctrl+5 { move-column-to-workspace "code"; }
+    Mod+Ctrl+4 { move-column-to-workspace "Chrome"; }
+    Mod+Ctrl+5 { move-column-to-workspace "Code"; }
     Mod+Ctrl+6 { move-column-to-workspace 6; }
     Mod+Ctrl+7 { move-column-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace "steam"; }
-    Mod+Ctrl+S { move-column-to-workspace "spotify"; }
+    Mod+Ctrl+9 { move-column-to-workspace "Steam"; }
+    Mod+Ctrl+S { move-column-to-workspace "Spotify"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
