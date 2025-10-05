@@ -1,0 +1,10 @@
+*
+!niri/
+!hypr/
+!mako/
+!ghostty/
+!waybar/
+!nushell/config.nu
+!nushell/env.nu
+!zellij/
+!helix/config.toml
