@@ -1,0 +1,55 @@
+theme = "ayu_dark"
+
+[editor]
+color-modes = true
+cursorline = true
+mouse = true
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+C-p = "save_selection"
+C-s = [
+  ':format',
+  ':w',
+]
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
+[keys.normal." "]
+G = [
+  ":write-all",
+  ":new",
+  ":insert-output lazygit",
+  ":buffer-close!",
+  ":redraw",
+  ":reload-all"
+]
+"-" = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+"_" = [
+    ":write-all",
+    ":insert-output scooter >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
