@@ -109,3 +109,8 @@ $env.FFMPEG_DIR = ($env.HOME | path join 'Tools/ffmpeg')
 $env.ZVM_INSTALL = ($env.HOME | path join '.zvm/self')
 path add ($env.HOME | path join '.zvm/bin')
 path add $env.ZVM_INSTALL
+
+# pnpm
+$env.PNPM_HOME = "/home/noit/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME )
+# pnpm end
