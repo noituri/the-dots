@@ -102,6 +102,7 @@ $env.NU_PLUGIN_DIRS = [
 
 use std/util "path add"
 path add ($env.HOME | path join 'Tools')
+path add ($env.HOME | path join 'Tools/slang/bin')
 path add ($env.HOME | path join 'go/bin')
 
 $env.FFMPEG_DIR = ($env.HOME | path join 'Tools/ffmpeg')
@@ -114,3 +115,6 @@ path add $env.ZVM_INSTALL
 $env.PNPM_HOME = "/home/noit/.local/share/pnpm"
 $env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME )
 # pnpm end
+
+
+$env.RADV_PERFTEST = "video_encode"

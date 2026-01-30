@@ -4,6 +4,7 @@ theme = "ayu_dark"
 color-modes = true
 cursorline = true
 mouse = true
+idle-timeout = 1500
 
 [editor.lsp]
 display-progress-messages = true
