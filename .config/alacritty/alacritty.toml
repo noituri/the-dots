@@ -1,0 +1,19 @@
+[window]
+padding = { x = 8, y = 8 }
+opacity = 0.85
+blur = true
+
+[font]
+normal = { family = "IoskeleyMono Nerd Font", style = "Regular" }
+
+[terminal]
+shell = "nu"
+
+[colors.primary]
+# background = "#252C35"
+background = "#242933"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
